@@ -13,3 +13,6 @@ php artisan route:cache
 
 echo "Running migrations..."
 php artisan migrate --force
+
+echo "Adding dummy datas"
+php artisan db:seed
