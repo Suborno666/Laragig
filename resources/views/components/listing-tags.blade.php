@@ -10,5 +10,4 @@
             <a href="/?tag={{$tag}}">{{$tag}}</a>
         </li>
     @endforeach
-
 </ul>
