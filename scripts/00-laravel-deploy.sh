@@ -4,7 +4,7 @@
 # since it's no longer needed with Composer  2 and Laravel  8+
 
 echo "Running composer"
-composer install --no-dev --working-dir=/var/www/html
+composer install --ignore-platform-reqs
 
 echo "generating application key..."
 php artisan key:generate --show
