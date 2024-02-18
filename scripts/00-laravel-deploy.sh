@@ -4,7 +4,7 @@
 # since it's no longer needed with Composer  2 and Laravel  8+
 
 echo "Running composer"
-composer install --ignore-platform-reqs
+composer install --ignore-platform-req=php
 
 echo "generating application key..."
 php artisan key:generate --show
