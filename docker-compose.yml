@@ -11,24 +11,8 @@ services:
     environment:
       - APP_ENV=local
       - APP_DEBUG=true
-      - DB_HOST="bpu55jwtnjsibxgvi6pp-mysql.services.clever-cloud.com"
-      - DB_DATABASE="bpu55jwtnjsibxgvi6pp"
-      - DB_USERNAME="uykcylzrbuhhofr3"
-      - DB_PASSWORD="uVpNdeOFAa60nLdhJBQ2"
-    depends_on:
-      - db
-
-  db:
-    image: mysql:8.0
-    ports:
-      - "3306:3306"
-    environment:
-      - MYSQL_DATABASE="bpu55jwtnjsibxgvi6pp"
-      - MYSQL_USER="uykcylzrbuhhofr3"
-      - MYSQL_PASSWORD="uVpNdeOFAa60nLdhJBQ2"
-      - MYSQL_ROOT_PASSWORD="uVpNdeOFAa60nLdhJBQ2"
-    volumes:
-      - dbdata:/var/lib/mysql
-
-volumes:
-  dbdata:
+      - DB_CONNECTION=mysql
+      - DB_HOST=bpu55jwtnjsibxgvi6pp-mysql.services.clever-cloud.com
+      - DB_DATABASE=bpu55jwtnjsibxgvi6pp
+      - DB_USERNAME=uykcylzrbuhhofr3
+      - DB_PASSWORD=uVpNdeOFAa60nLdhJBQ2

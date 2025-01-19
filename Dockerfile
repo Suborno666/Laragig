@@ -14,13 +14,23 @@ ENV APP_ENV production
 ENV APP_DEBUG false
 ENV LOG_CHANNEL stderr
 
+# Database config
+ENV DB_CONNECTION mysql
+ENV DB_HOST bpu55jwtnjsibxgvi6pp-mysql.services.clever-cloud.com
+ENV DB_DATABASE bpu55jwtnjsibxgvi6pp
+ENV DB_USERNAME uykcylzrbuhhofr3
+ENV DB_PASSWORD uVpNdeOFAa60nLdhJBQ2
+
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # Install dependencies
 RUN composer install --no-interaction --no-dev --prefer-dist
 
-# Create script to run migrations
+# Generate application key
+RUN php artisan key:generate --force
+
+# Run migrations
 RUN echo '#!/bin/sh\n\
 php artisan migrate --force\n\
 /start.sh' > /run.sh
