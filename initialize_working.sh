@@ -18,7 +18,7 @@ source .env
 echo "START_HOSTING_ON_CLOUD: $START_HOSTING_ON_CLOUD"
 
 case "$START_HOSTING_ON_CLOUD" in
-  [Yy]yes*)
+  [yes]*)
     echo "Initialising the script..."
     chmod +x ./serve.sh # Enabling script
     ./serve.sh # Running script
